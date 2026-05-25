@@ -1,2 +1,5 @@
 .sid-identity
 .envrc
+.worktrees/
+.worker-tab-id
+.DS_Store
