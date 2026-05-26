@@ -30,6 +30,24 @@ This repo extracts that surface into study material so an LLM notebook can teach
 | `07-actions.md` | Actions | https://docs.github.com/en/actions |
 | `08-github-cli.md` | GitHub CLI (`gh`) | https://docs.github.com/en/github-cli |
 
+## Companion: the executable reference
+
+This notebook is the *theory*. Its hands-on counterpart lives in a sibling repo,
+**[`gh-app-scaffold`](https://github.com/borahanmirzaii/gh-app-scaffold)** — a
+production-shaped GitHub App (FastAPI + hexagonal) that *implements* the surface
+studied here. Read about a primitive, then run it against a live repo.
+
+| Notebook area | Where it's realized in `gh-app-scaffold` |
+|---|---|
+| `01-apps.md` — GitHub Apps | `adapters/github_auth.py` — JWT → installation-token flow |
+| `04-webhooks.md` — Webhooks | `adapters/webhook_verifier.py` + `api/fastapi_app.py` |
+| `02-rest-api.md` — REST API | `adapters/github_rest.py` |
+| `03-graphql.md` — GraphQL | roadmap Phase 7 — `github_graphql.py` (not built yet) |
+| `07-actions.md` — Actions | roadmap Phase 5 — Actions OIDC token exchange (not built yet) |
+
+The scaffold's unbuilt roadmap phases (Checks → GraphQL → OIDC → Deployments)
+double as a *build-it-to-learn-it* curriculum — one phase per area file.
+
 ## How to use it with an LLM notebook
 
 1. **Fastest path — URLs.** Open NotebookLM, create a notebook, and add the URLs from [`sources.md`](sources.md) as sources. NotebookLM fetches and indexes them itself.
